@@ -2,6 +2,9 @@
 # Modified by: Yexin Yang
 # Licensed under the MIT license.
 
+# Modified by: Jiangyu Han, 2022
+#
+
 import torch
 import torch.nn as nn
 
@@ -69,25 +72,3 @@ class TransformerCorrection(nn.Module):
         output = [out[:ilen] for out, ilen in zip(output, ilens)]
 
         return output        
-
-if __name__ == "__main__":
-    model = TransformerCorrection(345)
-    input = torch.randn(4, 200, 345)
-    x = [x for x in input]
-#    x = [input]
-    rttm = torch.randn(4, 200, 2)
-    y = model(x, rttm)
-    print(y[0].shape)
-#    torch.set_printoptions(
-#        precision=2,    # 精度，保留小数点后几位，默认4
-#        threshold=1000,
-#        edgeitems=3,
-#        linewidth=150,  # 每行最多显示的字符数，默认80，超过则换行显示
-#        profile=None,
-#        sci_mode=False  # 用科学技术法显示数据，默认True
-#    )
-#    
-#    d_model = 256
-#    posi_emb = PositionalEncoding(d_model, 0.1)
-#    x = torch.randn(4, 200, d_model)
-#    y = posi_emb(x)

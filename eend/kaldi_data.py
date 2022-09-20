@@ -2,6 +2,7 @@
 # Modified by: Yexin Yang
 # Licensed under the MIT license.
 #
+# Modified by: Jiangyu Han, 2022
 # This library provides utilities for kaldi-style data directory.
 
 
@@ -82,12 +83,6 @@ def load_wav(wav_rxfilename, start=0, end=None):
         # normal wav file
         data, samplerate = sf.read(wav_rxfilename, start=start, stop=end)
     return data, samplerate
-
-
-#def load_sad(filepath):
-#    h5_data = h5py.File(filepath, 'r')
-#    data = h5_data["T_hat"][:]
-#    return data
     
 
 def load_utt2spk(utt2spk_file):

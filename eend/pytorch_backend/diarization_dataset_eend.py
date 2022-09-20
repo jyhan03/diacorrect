@@ -116,17 +116,3 @@ class KaldiDiarizationDataset(torch.utils.data.Dataset):
         Y_ss = torch.from_numpy(Y_ss).float()
         T_ss = torch.from_numpy(T_ss).float()
         return Y_ss, T_ss
- 
-
-
-
-if __name__ == '__main__':
-    data_dir = r'C:\Users\Jyhan\Desktop\Speaker Diarization\projects\debug\sample\data\dev_clean_2_ns2_beta2_5'
-    rttm_path=r'C:\Users\Jyhan\Desktop\Speaker Diarization\projects\debug\sample\data\dev_clean_2_ns2_beta2_5\rttm'
-    dataset = KaldiDiarizationDataset(data_dir)
-    A = dataset[1]
-#    print(A[1])
-#    print(A[2])
-#    rttm_path=r'C:\Users\Jyhan\Desktop\Speaker Diarization\projects\debug\sample\data\dev_clean_2_ns2_beta2_5\rttm'
-#    out_path = r'C:\Users\Jyhan\Desktop\喜马拉雅\work\diarization\ustc-ximalaya\ts-vad_ustc\revised\debug\segments'
-#    a = rttm2segments(rttm_path, out_path)
