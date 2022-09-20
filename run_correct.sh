@@ -5,11 +5,11 @@ ulimit -S -n 4096
 export PYTHONPATH=`pwd`:$PYTHONPATH
 
 conf_dir=conf/large
-exp_dir=exp/icassp23-verify/correct
+exp_dir=exp/diarization/correct
 
 # train
-train_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/train_clean_100_ns2_beta2_10000 # own path
-dev_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/dev_clean_ns2_beta2_500  # own path
+train_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/train_clean_100_ns2_beta2_10000 # own path
+dev_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/dev_clean_ns2_beta2_500  # own path
 model_dir=$exp_dir/models
 train_conf=$conf_dir/train.yaml
 
@@ -17,7 +17,7 @@ affix=simu
 
 # inference
 infer_conf=$conf_dir/infer.yaml
-test_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/test_clean_ns2_beta2_500  # own path
+test_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/test_clean_ns2_beta2_500  # own path
 test_model=$model_dir/avg.th
 infer_out_dir=$exp_dir/infer/$affix
 
@@ -29,8 +29,8 @@ stage=1
 gpu=6
 
 # Prepare initial speaker activity
-base_model=exp/icassp23-verify/sa-eend/models/avg.th  # baseline model path
-sas_out_dir=exp/icassp23-verify/sa-eend/infer     # baseline sas output 
+base_model=exp/diarization/sa-eend/models/avg.th  # baseline model path
+sas_out_dir=exp/diarization/sa-eend/infer     # baseline sas output 
 if [ $stage -le 0 ]; then
     echo "Prepare initial speaker activity"
 	for data in train dev test; do

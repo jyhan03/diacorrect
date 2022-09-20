@@ -5,20 +5,20 @@ ulimit -S -n 4096
 export PYTHONPATH=`pwd`:$PYTHONPATH
 
 conf_dir=conf/large
-exp_dir=exp/icassp23-verify/sa-eend
+exp_dir=exp/diarization/sa-eend
 
 # Training
 model_dir=$exp_dir/models
 train_conf=$conf_dir/train.yaml
-train_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/train_clean_100_ns2_beta2_10000
-dev_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/dev_clean_ns2_beta2_500
+train_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/train_clean_100_ns2_beta2_10000
+dev_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/dev_clean_ns2_beta2_500
 
 affix=simu
 
 # Inference
 test_model=$model_dir/avg.th
 infer_conf=$conf_dir/infer.yaml
-test_dir=/data/ssp/hanjiangyu/diarization/EEND/egs/mini_librispeech/v1/data/simu/data/test_clean_ns2_beta2_500
+test_dir=/path/EEND/egs/mini_librispeech/v1/data/simu/data/test_clean_ns2_beta2_500
 infer_out_dir=$exp_dir/infer/$affix
 
 # Scoring
