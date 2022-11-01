@@ -1,5 +1,5 @@
 # End-to-end error correction for speaker diarization
-This repository provides a PyTorch implementation for our ICASSP23 paper titled "DiaCorrect: End-to-end error correction for speaker diarization".
+This repository provides a PyTorch implementation for our paper titled ["DiaCorrect: End-to-end error correction for speaker diarization"](https://arxiv.org/pdf/2210.17189.pdf).
 
 Main training/inference framework in our work is based on [
 EEND_PyTorch](https://github.com/Xflick/EEND_PyTorch).
@@ -20,7 +20,12 @@ EEND_PyTorch](https://github.com/Xflick/EEND_PyTorch).
 | | 2| 1.32 | **2.46** | 0.86 | **4.63** | **10.25**
 
 # Citation
-xxxxxxxxxxxxxxx
+    @article{diacorrect,
+      title={DiaCorrect: End-to-end error correction for speaker diarization},  
+      author={Han, J. and Cao, Y. and Lu, H. and Long, Y.},
+      journal={arXiv preprint arXiv:2210.17189},
+      year={2022}
+    }
 
 # Contact
 Email: jyhan03@163.com
